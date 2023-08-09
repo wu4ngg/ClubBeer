@@ -87,9 +87,9 @@ public class DB {
     public Order insertOrder(Order order) throws SQLException {
         PreparedStatement statement = conn.prepareStatement(String.format("INSERT INTO HoaDon (NgayLap, TongTien, UserID) VALUES ('%s', %d, %d)", order.getNgayLap(), 0, loginDetails.getID()));
         statement.execute();
-        ResultSet s = st.executeQuery("SELECT ID FROM HOADON");
+        ResultSet s = st.executeQuery("SELECT MAX(ID) FROM HOADON");
 
-        s.last();
+        s.next();
         System.out.println(String.valueOf(s.getInt(1)));
         return new Order(s.getInt(1));
     }
