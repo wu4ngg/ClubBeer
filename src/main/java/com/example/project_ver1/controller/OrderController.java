@@ -206,7 +206,7 @@ public class OrderController implements Initializable {
         File sel = c.showDialog(id_addProduct.getParent().getScene().getWindow());
         System.out.println(sel.getAbsolutePath().toString());
         File out = new File(sel.getAbsolutePath() + p + "hoadon"+IdHD+".txt");
-
+        IdHD = Integer.parseInt(id_SoHoaDon.getText());
         String fileName = sel.getAbsolutePath() + p + "hoadon"+IdHD+".txt";
         Path newFile = Paths.get(fileName);
         Files.createFile(newFile);
@@ -221,10 +221,10 @@ public class OrderController implements Initializable {
         s.append("\n===================================================================");
         s.append(String.format("\n Tổng tiền: %d", tongtien));
         s.append("\n===================================================================");
-        LocalDateTime date = LocalDateTime.now().plusDays(1);
+        LocalDateTime date = LocalDateTime.now();
         DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd", Locale.ENGLISH);
         String dt = format.format(date);
-        s.append("\nCông ty TNHH ClubBeer, Hoá đơn xuất ngày " + dt);
+        s.append("\nCông ty TNHH ClubBeer, Hoá đơn xuất ngày ").append(dt);
         BufferedWriter writer = new BufferedWriter(new FileWriter(out));
         writer.write(s.toString());
         writer.close();
@@ -288,15 +288,17 @@ public class OrderController implements Initializable {
                 default:
                     break;
             }
-            arr.add(new OrderDeltail(set.getInt(1), set.getInt(2), set.getInt(4), set.getString(3), (int) (price * set.getInt(4)), set.getString(5)));
-            pricetotal += (price * set.getInt(4));
+            if(hoadon == IdHD){
+                arr.add(new OrderDeltail(set.getInt(1), set.getInt(2), set.getInt(4), set.getString(3), (int) (price * set.getInt(4)), set.getString(5)));
+                pricetotal += (price * set.getInt(4));
+            }
+
         }
 
         total.setText(String.valueOf(pricetotal));
         return arr;
     }
     public void clearTextFeild(){
-        id_SoHoaDon.clear();
         id_tenSP.clear();
         id_gia.clear();
         id_Soluong.clear();
@@ -320,6 +322,7 @@ public class OrderController implements Initializable {
         if (tb_ordetail.getSelectionModel().getSelectedItem() != null) {
             Product product = db.getProductById(tb_ordetail.getSelectionModel().getSelectedItem().getIdsp());
             String TenSP = product.getTenSP();
+            System.out.println("idhd: " + IdHD);
             int soCt = tb_ordetail.getSelectionModel().getSelectedItem().getSoCT();
             try {
                 Alert a = new Alert(Alert.AlertType.CONFIRMATION);
