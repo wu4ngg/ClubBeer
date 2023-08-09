@@ -12,7 +12,7 @@
             <Button layoutX="12.0" layoutY="10.0" mnemonicParsing="false" onAction="#dangXuat" text="Đăng xuất" />
             <Separator layoutY="49.0" prefWidth="1155.0" />
          </children></Pane>
-        <GridPane fx:id="grid" hgap="5.0" layoutY="51.0" prefHeight="664.0" prefWidth="329.0" style="-fx-background-color: #7895CB;" vgap="5.0">
+        <GridPane fx:id="grid" hgap="5.0" layoutY="51.0" prefHeight="664.0" prefWidth="311.0" style="-fx-background-color: #7895CB;" vgap="5.0">
             <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="136.0" minWidth="10.0" prefWidth="130.0" />
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="224.0" minWidth="10.0" prefWidth="136.0" />
@@ -28,14 +28,14 @@
                 <RowConstraints maxHeight="60.79999999999999" minHeight="10.0" prefHeight="60.79999999999999" vgrow="SOMETIMES" />
             </rowConstraints>
         </GridPane>
-        <Pane layoutX="329.0" layoutY="51.0" prefHeight="664.0" prefWidth="826.0" style="-fx-background-color: #4A55A2;">
+        <Pane layoutX="312.0" layoutY="51.0" prefHeight="664.0" prefWidth="843.0" style="-fx-background-color: #4A55A2;">
             <children>
                 <Label layoutX="106.0" layoutY="37.0" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="35.0" />
                     </font>
                 </Label>
-            <VBox alignment="CENTER" layoutX="12.0" layoutY="37.0" maxWidth="1.7976931348623157E308" spacing="25.0">
+            <VBox alignment="CENTER" layoutX="1.0" layoutY="37.0" maxWidth="1.7976931348623157E308" prefHeight="611.0" prefWidth="825.0" spacing="25.0">
                <children>
                   <Label prefWidth="394.0" text="Hoá đơn đặt hàng" textFill="#ffd51c">
                      <font>
@@ -69,16 +69,16 @@
                                           <ComboBox fx:id="id_size" prefHeight="34.0" prefWidth="128.0" promptText="Size" />
                                        </children>
                                     </VBox>
-                                    <HBox spacing="10.0">
+                                    <HBox alignment="CENTER_LEFT" spacing="10.0">
                                        <children>
-                                          <Label text="Tổng tiền:" textFill="WHITE">
+                                          <Label text="Tổng tiền:" textFill="YELLOW">
                                              <font>
-                                                <Font name="Arial Bold" size="22.0" />
+                                                <Font name="System Bold" size="16.0" />
                                              </font>
                                           </Label>
-                                          <Label fx:id="total" text="0" textFill="WHITE">
+                                          <Label fx:id="total" text="0" textFill="YELLOW">
                                              <font>
-                                                <Font name="American Typewriter" size="24.0" />
+                                                <Font name="System Bold" size="16.0" />
                                              </font>
                                           </Label>
                                        </children>
@@ -89,18 +89,19 @@
                                  <children>
                                     <HBox maxWidth="1.7976931348623157E308" prefWidth="224.0" spacing="15.0">
                                        <children>
-                                              <Button fx:id="id_addProduct" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#addProduct" prefHeight="72.0" prefWidth="116.0" text="Thêm SP" textFill="#060708" HBox.hgrow="ALWAYS">
+                                              <Button fx:id="id_addProduct" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#addProduct" prefHeight="72.0" prefWidth="60.0" text="Thêm SP" textFill="#060708" HBox.hgrow="ALWAYS">
                                              <font>
-                                                <Font name="Arial Bold" size="13.0" />
+                                                <Font name="Arial Bold" size="12.0" />
                                              </font>
                                           </Button>
-                                          <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#deleteOrder" prefHeight="72.0" text="Xoá" textFill="#060708">
+                                          <Button mnemonicParsing="false" onAction="#clear" prefHeight="69.0" prefWidth="48.0" text="clear">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font></Button>
+                                          <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#deleteOrder" prefHeight="72.0" text="❌" textFill="#060708">
                                              <padding>
                                                 <Insets left="25.0" right="25.0" />
                                              </padding>
-                                             <font>
-                                                <Font name="System Bold" size="15.0" />
-                                             </font>
                                           </Button>
                                        </children>
                                     </HBox>

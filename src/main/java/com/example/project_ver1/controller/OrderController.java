@@ -121,10 +121,15 @@ public class OrderController implements Initializable {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+
+        tb_ordetail.getItems().clear();
+
+
     }
     public void getProds() throws SQLException{
         ResultSet product = db.getProduct();
         while(product.next()){
+
             prods.add(new Product(product.getInt(1), product.getString(2), product.getString(3), product.getInt(4), product.getInt(5)));
         }
     }
@@ -142,9 +147,11 @@ public class OrderController implements Initializable {
         LocalDateTime date = LocalDateTime.now().plusDays(1);
         DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd", Locale.ENGLISH);
         System.out.println(Size);
+
         String dt = format.format(date);
 
         Order order = new Order(-1, dt);
+
         IdHD = db.insertOrder(order).getMaHD();
         id_SoHoaDon.setText(String.valueOf(IdHD));
         tb_ordetail.getItems().clear();
@@ -187,6 +194,8 @@ public class OrderController implements Initializable {
         System.out.println(Size);
         OrderDeltail orderDeltail = new OrderDeltail(0, Integer.parseInt(idHD), ID, Integer.parseInt(soluongProduct), Size);
         db.inserdOrderDetail(orderDeltail);
+        // ủa t clear rồi mà???
+
         tb_ordetail.getItems().clear();
         updateTotalPrice();
         getData();
@@ -230,6 +239,9 @@ public class OrderController implements Initializable {
         writer.close();
         tb_ordetail.getItems().clear();
         getData();
+
+        clearTextFeild();
+        tb_ordetail.getItems().clear();
     }
     public ArrayList<OrderDeltail> iNeedMoreDETAILS(int id) throws SQLException {
         ArrayList<OrderDeltail> d = new ArrayList<>();
@@ -268,10 +280,16 @@ public class OrderController implements Initializable {
         return list;
     }
 
+    public void  clear(){
+        clearTextFeild();
+    }
+
     public ArrayList<OrderDeltail> getAllOrderDetail() throws SQLException{
         int totalPrice = 0;
         double pricetotal = 0;
         int hoadon = -1;
+
+
         ArrayList<OrderDeltail> arr = new ArrayList<>();
         ResultSet set = db.getAllOrderDetail();
         while(set.next()){
@@ -288,6 +306,7 @@ public class OrderController implements Initializable {
                 default:
                     break;
             }
+
             arr.add(new OrderDeltail(set.getInt(1), set.getInt(2), set.getInt(4), set.getString(3), (int) (price * set.getInt(4)), set.getString(5)));
             pricetotal += (price * set.getInt(4));
         }
