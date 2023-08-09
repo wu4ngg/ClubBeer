@@ -84,7 +84,7 @@
                            <children>
                               <Button defaultButton="true" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#addUser" prefHeight="49.0" prefWidth="83.0" text="Thêm" HBox.hgrow="ALWAYS" />
                               <Button layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#deleteUser" prefHeight="44.0" prefWidth="97.0" text="Xóa" HBox.hgrow="ALWAYS" />
-                              <Button layoutX="62.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="45.0" prefWidth="81.0" text="Sửa" HBox.hgrow="ALWAYS" />
+                              <Button layoutX="62.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#editUser" prefHeight="45.0" prefWidth="81.0" text="Sửa" HBox.hgrow="ALWAYS" />
                            </children>
                         </HBox>
                         <Button layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#clearBoxes" prefHeight="34.0" prefWidth="311.0" text="Clear ô text" HBox.hgrow="ALWAYS">
