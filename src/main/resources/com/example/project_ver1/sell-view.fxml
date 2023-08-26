@@ -50,7 +50,7 @@
                                  <children>
                                     <VBox prefHeight="402.0" prefWidth="224.0" spacing="15.0">
                                        <children>
-                                          <TextField fx:id="id_SoHoaDon" prefHeight="42.0" prefWidth="220.0" promptText="Số hóa đơn" />
+                                          <TextField fx:id="id_SoHoaDon" disable="true" prefHeight="42.0" prefWidth="220.0" promptText="Số hóa đơn" />
                                           <HBox spacing="10.0" VBox.vgrow="ALWAYS">
                                              <children>
                                                 <Button fx:id="id_btnCreateProduct" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#createOrder" prefHeight="34.0" text="Tạo hóa đơn" HBox.hgrow="ALWAYS" />

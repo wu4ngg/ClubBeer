@@ -154,7 +154,7 @@ public class OrderController implements Initializable {
 
         IdHD = db.insertOrder(order).getMaHD();
         id_SoHoaDon.setText(String.valueOf(IdHD));
-        tb_ordetail.getItems().clear();
+       // tb_ordetail.getItems().clear();
 
     }
     private void updateTotalPrice() throws SQLException {
