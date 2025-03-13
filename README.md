@@ -4,13 +4,17 @@
 # ClubBeer
 Đồ án java ko chiến báo chút nào\
 Nhưng có dùng PostgreSQL nên hơi chiến báo một xíu
-# Tiến độ đồ án:
+# Tiến độ đồ án
 100% hoàn thành hết. (kq: được 10 điểm 🥹)
 # Tính năng
 - CRUD sản phẩm.
 - Thêm hoá đơn.
 - Xoá hoá đơn.
 - Thống kê tài chính bằng Graph.
+# Credits
+1. Ngô Trần Hoàng Phát ([PhatNgo03](https://github.com/PhatNgo03))
+2. Trần Duy Thanh ([trduyTh4nh](https://github.com/trduyTh4nh))
+3. Tiêu Trí Quang ([wu4ngg](https://github.com/wu4ngg))
 # Yêu cầu
 - Một cái máy tính
 - Một cái Hệ điều hành
@@ -24,3 +28,13 @@ Mở IntelliJ lên rồi bấm nút ▶️ ở trên góc màn hình :v
 2. Build cho production
 
 🤷
+
+```
+     =/\                 /\=
+     / \'._   (\_/)   _.'/ \
+    / .''._'--(o.o)--'_.''. \
+   /.' _/ |`'=/ " \='`| \_ `.\
+  /` .' `\;-,'\___/',-;/` '. '\
+ /.-'       `\(-V-)/`       `-.\
+ `            "   "            `
+```
