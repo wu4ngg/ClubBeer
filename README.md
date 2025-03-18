@@ -1,6 +1,10 @@
 ![JavaFX](https://img.shields.io/badge/javafx-%23FF0000.svg?style=for-the-badge&logo=javafx&logoColor=white)
 ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
 ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
+
+<hr/>
+<img src="https://github.com/user-attachments/assets/285534e9-b97b-451d-ac27-b3fcc1f8fc05" height=256 />
+
 # ClubBeer
 Đồ án java ko chiến báo chút nào\
 Nhưng có dùng PostgreSQL nên hơi chiến báo một xíu
